@@ -22,4 +22,26 @@
 en:
   layouts:
     application:
-      title: Framgia Training Management System
+      app_title: Framgia Training Management System
+    header:
+      tablink_website: http://www.framgia.com
+      tablink_home: Home
+    footer:
+      footer_title: Training Project by Grace Sojor and Christian Angel Galamay from Framgia Philippines
+      button_about: About this Project |
+      button_contact: Contact |
+      button_help: Help
+  static_pages:
+    index:
+      intro_welcome: Welcome to Framgia Training Management System
+      intro_text: The best online training platform for everyone!
+    about:
+      about_desc: This is a training project by Grace Sojor and Christian Angel Galamay from Framgia Philippines.
+      about_text: Training Management System is a valuable web-based tool to help you learn a course.
+    contact:
+      contact_desc: Get in touch with us
+      contact_text: Don't shy away! Drop us an email here grace.m.sojor@framgia.com and chrisitian.angel.g.galamay@framgia.com
+    help:
+      help_desc: Help
+      help_text: We got you covered. We will guide you all the way.
+  
