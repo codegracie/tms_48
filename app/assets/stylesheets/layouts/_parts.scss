@@ -1,0 +1,109 @@
+
+/* Parts */
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  width: auto;
+}
+
+.span6 {
+  width: 352px;
+}
+
+.row {
+  margin-left: 0;
+}
+
+.media .row {
+  margin-left: -20px;
+}
+
+.how-framgia-works {
+  padding-top: 100px;
+}
+
+.how-framgia-works h2 {
+  font-size: 30px;
+  margin-bottom: 60px;
+  font-family: inherit;
+  font-weight: bold;
+  color: #4c4c45;
+  text-rendering: optimizelegibility;
+}
+
+.how-framgia-works .why-better-row p {
+  margin-bottom: 30px;
+}
+
+.how-framgia-works.babbel-icon {
+  height: 90px;
+  width: 70px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: inline-block;
+  text-indent: -9999em;
+  float: left;
+  margin-right: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.row, .thumbnails {
+  margin-left: 0;
+}
+
+.row:before {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.media:first-child {
+  margin-top: 0;
+}
+
+.media {
+  overflow: hidden;
+  zoom: 1;
+}
+
+div {
+  display: block;
+}
+
+h4{
+  font-family: inherit;
+  font-weight: bold;
+  color: #4c4c45;
+  text-rendering: optimizelegibility;
+}
+
+p {
+  margin: 0 0 9.5px;
+}
+
+p {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+.span {
+  float: none;
+  display: block;
+  width: 100%;
+  margin-left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
