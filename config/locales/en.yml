@@ -87,6 +87,10 @@ en:
         title: Sign in Now
         signin: Sign In
   admin:
+    courses:
+      index:
+        title: Courses
+        add: Add
     subjects:
       index:
         header_title: Subjects

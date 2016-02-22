@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users
 
   root    "static_pages#index"
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
     root "users#index"
     resources :users
     resources :subjects
+    resources :courses
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
