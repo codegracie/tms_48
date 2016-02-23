@@ -1,11 +1,11 @@
-class CoursesController < ApplicationController
+class Admin::CoursesController < AdminController
   load_and_authorize_resource
   before_action :load_subjects, only: [:new, :edit]
 
   def create
     if @course.save course_params
-      flash[:notice] = t ".success"
-      redirect_to current_user
+      flash[:success] = t ".success"
+      redirect_to admin_user_courses_path current_user
     else
       render "new"
     end
@@ -13,8 +13,8 @@ class CoursesController < ApplicationController
 
   def update
     if @course.update_attributes course_params
-      flash[:notice] = t ".success"
-      redirect_to current_user
+      flash[:success] = t ".success"
+      redirect_to admin_user_courses_path current_user
     else
       render "edit"
     end
@@ -22,8 +22,8 @@ class CoursesController < ApplicationController
 
   def destroy
     @course.destroy
-    flash[:notice] = t ".success"
-    redirect_to current_user
+    flash[:success] = t ".success"
+    redirect_to admin_user_courses_path current_user
   end
 
   private

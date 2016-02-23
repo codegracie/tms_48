@@ -36,7 +36,7 @@
       <i class="fa fa-table fa-2x">
         <a>
           <span>
-            <%= link_to t(".courses"), "#" %>
+            <%= link_to t(".courses"), admin_user_courses_path(current_user.id) %>
           </span>
           <span class="label label-primary pull-right">
             <%= Course.count %>

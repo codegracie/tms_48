@@ -4,7 +4,7 @@ class AdminController < ApplicationController
 
   private
   def ensure_user_rights
-    unless user_signed_in? && current_user.admin?
+    unless user_signed_in? && (current_user.admin? || current_user.supervisor?)
       redirect_to "/"
     end
   end

@@ -1,0 +1,83 @@
+<section class="wrapper">
+  <h3>
+    <%= link_to :back do %>
+      <i class="fa fa-angle-right">
+        <%= t ".header_title" %>
+      </i>
+    <% end %>
+  </h3>
+  <div class="row mt">
+    <div class="col-lg-12">
+      <div class="form-panel top_line">
+        <div class="form-header">
+          <i class="fa fa-angle-right"></i>
+          <%= t ".title" %>
+        </div>
+        <%= form_for [:admin, @course], url: admin_user_course_path(current_user.id, @course.id), method: :patch,
+          html: {multipart: true,
+          class: "form-horizontal style-form"} do |f| %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <div class="form-group">
+            <%= f.label :title, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :title, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :description, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_area :description, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :start_date, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.date_field :start_date, class: "form-control",
+                value: Time.now.strftime("%Y-%m-%d") %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :end_date, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.date_field :end_date, class: "form-control",
+                value: Time.now.strftime("%Y-%m-%d") %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :status, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.select :status, ["Not started", "Started", "Finish"], {}, {class: "form-control"} %>
+            </div>
+          </div>
+          <i class="fa fa-angle-right"></i>
+          <%= t ".list_of_subjects" %>
+          <table class="table table-striped table-advance">
+            <thead>
+              <tr>
+                <th><%= t ".select" %></th>
+                <th><%= t ".subject_title" %></th>
+                <th><%= t ".instruction "%></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= f.fields_for :course_subjects do |builder| %>
+                <tr>
+                  <td><%= builder.check_box :_destroy,
+                    {checked: !builder.object.id.nil?}, 0, 1 %></td>
+                  <td><%= builder.object.subject.title %></td>
+                  <td><%= builder.object.subject.instruction.truncate 50 %></td>
+                </tr>
+                <%= builder.hidden_field :subject_id, value: builder.object.subject_id %>
+              <% end %>
+            </tbody>
+          </table>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <%= f.submit class: "btn btn-success pull-right" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

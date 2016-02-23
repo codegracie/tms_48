@@ -23,31 +23,6 @@ en:
   time:
     formats:
       short: "%m/%d/%Y"
-  courses:
-    course_subject_fields:
-      remove: Remove
-    form:
-      list_of_subjects: List of Subjects
-      add_subject: Add Subject
-      add_new_subject: Add Subject
-    edit:
-      header_title: Supervisor Course
-      title: Edit Course
-    new:
-      header_title: Supervisor Course
-      title: New Course
-    show:
-      title: Course
-      start_date: Start Date
-      end_date: End Date
-      status: Status
-      list: Subject List
-    create:
-      success: Course successfully created
-    update:
-      success: Course successfully updated
-    destroy:
-      success: Course successfully deleted
   layouts:
     application:
       app_title: Framgia Training Management System
@@ -57,6 +32,8 @@ en:
       tablink_website: http://www.framgia.com
       tablink_home: Home
       tablink_courses: Courses List
+      tablink_mycourses: My Courses
+      tablink_subjects: Subjects
       tablink_supervisors: Supervisors
       tablink_trainees: Trainees
       tablink_account: My Account
@@ -87,6 +64,30 @@ en:
   shared:
     user_activities:
       title: Activities
+    user_courselist:
+      title_courses: Course List
+      text_mycourses: My Courses
+      text_mycurrentcourses: Current Courses
+      text_currentcourseshere: --Current Courses Here--
+    user_info:
+      title: About Me
+      text_education: Education
+      text_educationhere: --Education Data Here--
+      text_location: Location
+      text_locationhere: --Location Data Here--
+      text_skills: Skills
+      text_skillshere: --Skills Data Here--
+      text_notes: --Notes--
+      text_noteshere: --Notes Here--
+    user_progress:
+      text_myrecord: My Record
+      text_activecourses: Active Courses
+      text_activesubjects: Active Subjects
+      text_taskcompleted: Task Completed
+      text_pendingtasks: Pending Tasks
+      text_coursesenrolled: Courses Enrolled
+      text_coursescompleted: Courses Completed
+      text_supervisors: Supervisors
   static_pages:
     index:
       intro_welcome: Welcome to Framgia Training Management System
@@ -107,9 +108,9 @@ en:
       help_text: We got you covered. We will guide you all the way.
   user_courses:
     index:
-      header_title: My Courses
+      title: My Courses
       add: Add
-      title: Course Title
+      description: Description
       start_date: Start Date
       end_date: End Date
       status: Status
@@ -135,6 +136,37 @@ en:
         title: Sign in Now
         signin: Sign In
   admin:
+    courses:
+      edit:
+        header_title: Supervisor Course
+        title: Edit Course
+        list_of_subjects: List of Subjects
+        add_subject: Add Subject
+        add_new_subject: Add Subject
+        select: Select
+        subject_title: Subject Title
+        instruction: Instruction
+      new:
+        header_title: Supervisor Course
+        title: New Course
+        list_of_subjects: List of Subjects
+        add_subject: Add Subject
+        add_new_subject: Add Subject
+        select: Select
+        subject_title: Subject Title
+        instruction: Instruction
+      show:
+        title: Course
+        start_date: Start Date
+        end_date: End Date
+        status: Status
+        list: Subject List
+      create:
+        success: Course successfully created
+      update:
+        success: Course successfully updated
+      destroy:
+        success: Course successfully deleted
     subjects:
       index:
         header_title: Subjects

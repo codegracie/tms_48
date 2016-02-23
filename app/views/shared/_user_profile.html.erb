@@ -1,11 +1,19 @@
 <div class="user-profile">
-  <div class="row">
-    <%= image_tag @user.avatar, size: "150x150", class: "user-avatar" %>
-  </div>
-  <div class="row">
-    <h3><%= @user.full_name %></h3>
-  </div>
-  <div class="row">
-    <%= @user.user_type %>
+  <div class="row flat">
+    <div class="col-lg-10">
+      <ul class="plan plan1">
+        <li class="plan-name">
+          <div class="row">
+            <%= @user.user_type %>
+          </div>
+        </li>
+        <li class="plan-avatar">
+          <%= image_tag @user.avatar, size: "150x150", class: "user-avatar" %>
+        </li>
+        <li>
+          <h3><%= @user.full_name %></h3>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
