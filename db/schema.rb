@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 20160218080751) do
   end
 
   create_table "supervisor_courses", force: :cascade do |t|
-    t.integer "user_id",    limit: 4
-    t.integer "subject_id", limit: 4
+    t.integer "user_id",   limit: 4
+    t.integer "course_id", limit: 4
   end
 
   create_table "tasks", force: :cascade do |t|

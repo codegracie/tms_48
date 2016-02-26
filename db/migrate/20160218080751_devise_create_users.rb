@@ -23,7 +23,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
     create_table :supervisor_courses do |t|
       t.references :user
-      t.references :subject
+      t.references :course
     end
 
     create_table :courses do |t|
