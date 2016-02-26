@@ -6,7 +6,7 @@
       <ul class ="nav bar navbar-nav pull-right">
         <% if user_signed_in? %>
           <li><%= link_to t(".tablink_home"), root_path %></li>
-          <li><%= link_to t(".tablink_courses"), "#" %></li>
+          <li><%= link_to t(".tablink_courses"), courses_path %></li>
           <% if current_user.admin? || current_user.supervisor?%>
             <li><%= link_to t(".tablink_subjects"), "#" %></li>
             <li><%= link_to t(".tablink_supervisors"), "#" %></li>

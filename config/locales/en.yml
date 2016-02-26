@@ -23,6 +23,24 @@ en:
   time:
     formats:
       short: "%m/%d/%Y"
+  courses:
+    index:
+      header_title: Course List
+      title: Course Title
+      description: Description
+      start_date: Start Date
+      end_date: End Date
+      status: Status
+      supervisor_count: Supervisors
+      trainee_count: Trainees
+      view: View
+      join: Join
+    show:
+      title: Course Description
+      start_date: Start Date
+      end_date: End Date
+      status: Status
+      list: Subject List
   layouts:
     application:
       app_title: Framgia Training Management System

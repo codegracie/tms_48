@@ -1,0 +1,15 @@
+<% provide(:title, params[:role].pluralize) %>
+<h1><%= t(:all) %><%= params[:role].pluralize %></h1>
+
+<%= will_paginate %>
+
+<table class="table">
+  <thead>
+    <th><%= t(:name) %></th>
+  </thead>
+
+  <%= render @users %>
+
+</table>
+
+<%= will_paginate %>
