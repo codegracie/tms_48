@@ -36,6 +36,8 @@ en:
       tablink_subjects: Subjects
       tablink_supervisors: Supervisors
       tablink_trainees: Trainees
+      add_new: Add New Trainee
+      view_all_trainees: View All Trainees
       tablink_account: My Account
       tablink_profile: My profile
       tablink_setting: Edit my Profile
@@ -67,7 +69,7 @@ en:
     user_course_list:
       title_courses: Course List
       text_mycourses: My Courses
-      text_mycurrentcourses: Current Course
+      text_mycurrentcourses: My Active Course
       text_currentcourseshere: --Current Course Here--
     user_info:
       title: About Me

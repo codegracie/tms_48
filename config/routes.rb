@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
     resources :courses do
       resource :supervisor_courses
+      resource :user_courses
     end
     resources :subjects
   end
