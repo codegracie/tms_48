@@ -27,56 +27,20 @@
             <div class="box-body">
               <table class="table table-bordered">
                 <thead>
-                  <th><%= t 'name' %></th>
-                  <th><%= t 'description' %></th>
-                  <th><%= t 'start_date' %></th>
-                  <th><%= t 'end_date' %></th>
-                  <th><%= t 'supervisor' %></th>
-                  <th><%= t 'trainee' %></th>
-                  <th><%= t 'status' %></th>
-                  <th><%= t 'progress' %></th>
+                  <th><%= t ".name" %></th>
+                  <th><%= t ".description" %></th>
+                  <th><%= t ".start_date" %></th>
+                  <th><%= t ".end_date" %></th>
+                  <th><%= t ".status" %></th>
                 </thead>
                 <tbody>
-                  <% @user.courses.each do |course| %>
+                  <% @user_courses.each do |user_course| %>
                     <tr>
-                      <td>
-                        <%= course.title %>
-                      </td>
-                      <td>
-                        <%= course.description.truncate 50 %>
-                      </td>
-                      <td>
-                        <%= datetime course.start_date %>
-                      </td>
-                      <td>
-                        <%= datetime course.end_date %>
-                      </td>
-                      <td>
-                        <%= course.status %>
-                      </td>
-                      <td>
-                        <%= course.users.supervisors.count  %>
-                      </td>
-                      <td>
-                        <%= course.users.trainees.count %>
-                      </td>
-                      <td>
-                        <div class="admin-actions">
-                          <%= link_to  admin_user_course_path(current_user.id, course.id),
-                            class: "button btn btn-success btn-xs" do %>
-                            <i class="fa fa-file-text"></i>
-                          <% end %>
-                          <%= link_to edit_admin_user_course_path(current_user.id, course.id),
-                            class: "button btn btn-primary btn-xs" do %>
-                            <i class="fa fa-pencil"></i>
-                          <% end %>
-                          <%= link_to admin_user_course_path(current_user.id, course.id), method: :delete,
-                            data: {confirm: "You want to delete?"},
-                            class: "button btn btn-danger btn-xs" do %>
-                            <i class="fa fa-trash-o"></i>
-                          <% end %>
-                        </div>
-                      </td>
+                      <td><%= user_course.course.title %></td>
+                      <td><%= user_course.course.description.truncate 50 %></td>
+                      <td><%= datetime user_course.course.start_date %></td>
+                      <td><%= datetime user_course.course.end_date %></td>
+                      <td><%= user_course.course.status %></td>
                     </tr>
                   <% end %>
                 </tbody>

@@ -23,6 +23,25 @@ en:
   time:
     formats:
       short: "%m/%d/%Y"
+  courses:
+    index:
+      header_title: Course List
+      title: Course Title
+      description: Description
+      start_date: Start Date
+      end_date: End Date
+      status: Status
+      supervisor_count: Supervisors
+      trainee_count: Trainees
+      view: View
+      join: Join
+      joined: Already Joined
+    show:
+      title: Course Description
+      start_date: Start Date
+      end_date: End Date
+      status: Status
+      list: Subject List
   layouts:
     application:
       app_title: Framgia Training Management System
@@ -36,6 +55,7 @@ en:
       tablink_subjects: Subjects
       tablink_supervisors: Supervisors
       tablink_trainees: Trainees
+      tablink_view_all: View All
       tablink_account: My Account
       tablink_profile: My profile
       tablink_setting: Edit my Profile
@@ -53,14 +73,11 @@ en:
       title: Framgia Training Management System Admin
       logout: Logout
     sidebar:
-      side_title: Framgia TMS
-      dashboard: Dashboard
+      side_title: Admin Page
       courses: Courses
       subjects: Subjects
       users: Users
       homepage: View Main
-      onlinestatus: Online
-      main_navigation: MAIN NAVIGATION
   shared:
     user_activities:
       title: Activities
@@ -69,6 +86,11 @@ en:
       text_mycourses: My Courses
       text_mycurrentcourses: Current Course
       text_currentcourseshere: --Current Course Here--
+      name: Coures Title
+      description: Description
+      start_date: Start Date
+      end_date: End Date
+      status: Status
     user_info:
       title: About Me
       text_education: Education
@@ -107,14 +129,9 @@ en:
       help_desc: Help
       help_text: We got you covered. We will guide you all the way.
   user_courses:
-    index:
-      title: My Courses
-      add: Add
-      description: Description
-      start_date: Start Date
-      end_date: End Date
-      status: Status
-      delete: You want to Delete?
+    create:
+      success: You successfully joined a course
+      failed: Please try again
   users:
     registrations:
       edit:
