@@ -42,6 +42,25 @@
                 </table>
               </div>
               <div id="trainee" class="tab-pane fade">
+                <table class="table table-striped table-advance">
+                  <thead>
+                    <tr>
+                      <th><%= t ".select" %></th>
+                      <th><%= t ".Name" %></th>
+                      <th><%= t ".email "%></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <%= f.collection_check_boxes :user_course_ids, User.trainee, :id,
+                    :full_name do |builder| %>
+                    <tr>
+                      <td class="align_checkbox"><%= builder.check_box %></td>
+                      <td><%= builder.object.full_name %></td>
+                      <td><%= builder.object.email %></td>
+                    </tr>
+                  <% end %> 
+                  </tbody>
+                </table>
               </div>
             </div>
             <%= f.submit class: "btn btn-success pull-right" %>

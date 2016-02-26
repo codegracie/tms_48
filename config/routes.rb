@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   get     "help"        => "static_pages#help", as: "help"
 
   resources :users
+  resources :courses, only: [:index, :show]
+  resources :user_courses
+  resources :user_tasks
+  resources :user_subjects
+  resources :activities
 
   namespace :admin do
     root "users#index"

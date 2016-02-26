@@ -1,28 +1,38 @@
-<section class="wrapper">
-  <h3>
-    <%= link_to admin_subjects_path do %>
-      <i class="fa fa-angle-right">
-        <%= t ".title" %>
-      </i>
-    <% end %>
-  </h3>
-  <div class="row mt">
-    <div class="col-md-9">
-      <div class="panel-body">
-        <div class="jumbotron">
-          <h2><%= @subject.title %></h2>
-          <br>
-          <%= @subject.instruction %>
-        </div>
-        <br>
-        <%= render "show_tasks" %>
-        <div class="add-task-row">
-          <%= link_to t(".edit"), edit_admin_subject_path(@subject),
-            class: "btn btn-success btn-sm pull-left" %>
-          <%= link_to t(".add"), new_admin_subject_path(@subject),
-            class: "btn btn-default btn-sm pull-right" %>
+<div id="page-wrapper" >
+  <div id="page-inner">
+    <hr/>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="page-header">
+              <i class="fa fa-globe"></i><%= t ".header_title" %>
+            </h2>
+          </div>
+          <div class="panel-body">
+            <h3>
+              <%= link_to admin_subjects_path do %>
+                <i class="fa fa-angle-right">
+                  <%= t ".title" %>
+                </i>
+              <% end %>
+            </h3>
+            <div class="jumbotron">
+              <h2><%= @subject.title %></h2>
+              <br>
+              <%= @subject.instruction %>
+            </div>
+            <br>
+            <%= render "show_tasks" %>
+            <div class="add-task-row">
+              <%= link_to t(".edit"), edit_admin_subject_path(@subject),
+                class: "btn btn-success btn-sm pull-left" %>
+              <%= link_to t(".add"), new_admin_subject_path(@subject),
+                class: "btn btn-default btn-sm pull-right" %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>

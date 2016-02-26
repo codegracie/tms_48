@@ -23,6 +23,25 @@ en:
   time:
     formats:
       short: "%m/%d/%Y"
+  courses:
+    index:
+      header_title: Course List
+      title: Course Title
+      description: Description
+      start_date: Start Date
+      end_date: End Date
+      status: Status
+      supervisor_count: Supervisors
+      trainee_count: Trainees
+      view: View
+      join: Join
+      joined: Already Joined
+    show:
+      title: Course Description
+      start_date: Start Date
+      end_date: End Date
+      status: Status
+      list: Subject List
   layouts:
     application:
       app_title: Framgia Training Management System
@@ -36,6 +55,7 @@ en:
       tablink_subjects: Subjects
       tablink_supervisors: Supervisors
       tablink_trainees: Trainees
+      tablink_view_all: View All
       tablink_account: My Account
       tablink_profile: My profile
       tablink_setting: Edit my Profile
@@ -58,6 +78,11 @@ en:
       subjects: Subjects
       users: Users
       homepage: View Main
+  public_activity:
+    user_task:
+      create:
+        completed: Completed
+        ago: ago
   shared:
     user_activities:
       title: Activities
@@ -66,6 +91,19 @@ en:
       text_mycourses: My Courses
       text_mycurrentcourses: Current Course
       text_currentcourseshere: --Current Course Here--
+      name: Coures Title
+      description: Description
+      start_date: Start Date
+      end_date: End Date
+      status: Status
+      start_date: Start Date
+      end_date: End Date
+      status: Status
+      subject_list: List of Subjects
+      task_title: Task Title
+      status: Status
+      finish: Finished
+      mark_finish: Mark as Finish
     user_info:
       title: About Me
       text_education: Education
@@ -104,14 +142,28 @@ en:
       help_desc: Help
       help_text: We got you covered. We will guide you all the way.
   user_courses:
-    index:
-      title: My Courses
-      add: Add
-      description: Description
+    create:
+      success: You successfully joined a course
+      failed: Please try again
+  user_subjects:
+    show:
+      list: List of Subjects
+      finish: Finished
+      not_finish: Not Finished
+      update: Update
+      information: Basic Information
       start_date: Start Date
       end_date: End Date
       status: Status
-      delete: You want to Delete?
+      instruction: Instruction
+      activity: Activities
+    update:
+      success: You successfully updated Tasks
+      failed: Please try again
+  user_tasks:
+    create:
+      success: You successfully update a Task
+      failed: Task updating failed. Please try again
   users:
     registrations:
       edit:
@@ -214,6 +266,9 @@ en:
         add: Add
       show_tasks:
         list: List of Tasks
+    supervisor_courses:
+      show:
+        title: Course List
     users:
       index:
         header_title: Users

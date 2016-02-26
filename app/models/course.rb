@@ -12,8 +12,13 @@ class Course < ActiveRecord::Base
   validates :status, presence: true
 
   accepts_nested_attributes_for :course_subjects, reject_if:
-    lambda {|a| a[:subject_id].blank?}, allow_destroy: true
+    lambda {|attr| attr[:subject_id].blank?}, allow_destroy: true
 
   accepts_nested_attributes_for :supervisor_courses, reject_if:
-    lambda {|a| a[:user_id].blank?}, allow_destroy: true
+    lambda {|attr| attr[:user_id].blank?}, allow_destroy: true
+
+  accepts_nested_attributes_for :user_courses, reject_if:
+    lambda {|attr| attr[:user_id].blank?}, allow_destroy: true
+
+  scope :active, -> {where "status = ?", "Started"}
 end
