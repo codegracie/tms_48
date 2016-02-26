@@ -23,6 +23,24 @@ en:
   time:
     formats:
       short: "%m/%d/%Y"
+  courses:
+    index:
+      header_title: Course List
+      title: Course Title
+      description: Description
+      start_date: Start Date
+      end_date: End Date
+      status: Status
+      supervisor_count: Supervisors
+      trainee_count: Trainees
+      view: View
+      join: Join
+    show:
+      title: Course Description
+      start_date: Start Date
+      end_date: End Date
+      status: Status
+      list: Subject List
   layouts:
     application:
       app_title: Framgia Training Management System
@@ -36,6 +54,7 @@ en:
       tablink_subjects: Subjects
       tablink_supervisors: Supervisors
       tablink_trainees: Trainees
+      button_view_all: View All
       tablink_account: My Account
       tablink_profile: My profile
       tablink_setting: Edit my Profile
@@ -53,14 +72,11 @@ en:
       title: Framgia Training Management System Admin
       logout: Logout
     sidebar:
-      side_title: Framgia TMS
-      dashboard: Dashboard
+      side_title: Admin Page
       courses: Courses
       subjects: Subjects
       users: Users
       homepage: View Main
-      onlinestatus: Online
-      main_navigation: MAIN NAVIGATION
   shared:
     user_activities:
       title: Activities
@@ -135,6 +151,8 @@ en:
       new:
         title: Sign in Now
         signin: Sign In
+    index:
+      All_users: All Users
   admin:
     courses:
       edit:

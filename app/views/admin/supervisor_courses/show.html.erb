@@ -20,7 +20,7 @@
             method: :put, html: {multipart: true, class: "form-horizontal style-form"} do |f| %>
             <div class="tab-content">
               <div id="supervisor" class="tab-pane fade in active">
-                <table class="table table-striped table-advance">
+                <table class="table table-striped table-bordered">
                   <thead>
                     <tr>
                       <th><%= t ".select" %></th>
@@ -42,9 +42,24 @@
                 </table>
               </div>
               <div id="trainee" class="tab-pane fade">
+                <table class="table table-striped table-bordered">
+                  <thead>
+                    <th><%= t ".select" %></th>
+                    <th><%= t ".name" %></th>
+                    <th><%= t ".email" %></th>
+                  </thead>
+                  <tbody>
+                    <%= f.collection_check_boxes :user_ids, User.trainee, :id, :full_name do |b| %>
+                    <tr>  
+                      <td class="align_checkbox"><%= b.check_box %></td>
+                      <td><%= b.text %></td>
+                    </tr>
+                    <% end %>                       
+                  </tbody>
+                </table>
+                <%= f.submit class: "btn btn-success pull-right" %>
               </div>
             </div>
-            <%= f.submit class: "btn btn-success pull-right" %>
           <% end %>
         </div>
       </div>
