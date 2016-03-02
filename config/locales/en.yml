@@ -91,6 +91,14 @@ en:
       start_date: Start Date
       end_date: End Date
       status: Status
+      start_date: Start Date
+      end_date: End Date
+      status: Status
+      subject_list: List of Subjects
+      task_title: Task Title
+      status: Status
+      finish: Finished
+      mark_finish: Mark as Finish
     user_info:
       title: About Me
       text_education: Education
@@ -132,6 +140,19 @@ en:
     create:
       success: You successfully joined a course
       failed: Please try again
+  user_subjects:
+    show:
+      list: List of Subjects
+      finish: Finished
+      not_finish: Not Finished
+      update: Update
+    update:
+      success: You successfully updated Tasks
+      failed: Please try again
+  user_tasks:
+    create:
+      success: You successfully update a Task
+      failed: Task updating failed. Please try again
   users:
     registrations:
       edit:

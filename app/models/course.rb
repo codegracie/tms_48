@@ -19,4 +19,6 @@ class Course < ActiveRecord::Base
 
   accepts_nested_attributes_for :user_courses, reject_if:
     lambda {|attr| attr[:user_id].blank?}, allow_destroy: true
+
+  scope :active, -> {where "status = ?", "Started"}
 end
