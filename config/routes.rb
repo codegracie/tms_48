@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :courses, only: [:index, :show]
+  resources :user_courses
 
   namespace :admin do
     root "users#index"

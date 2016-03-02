@@ -26,31 +26,30 @@
               <tbody>
                 <% @courses.each do |course| %>
                   <tr>
-                    <td>
-                      <%= course.title %>
-                    </td>
-                    <td>
-                      <%= course.description.truncate 30 %>
-                    </td>
-                    <td>
-                      <%= datetime course.start_date %>
-                    </td>
-                    <td>
-                      <%= datetime course.end_date %>
-                    </td>
-                    <td>
-                      <%= course.supervisor_courses.count %>
-                    </td>
-                    <td>
-                      <%= course.user_courses.count %>
-                    </td>
-                    <td>
-                      <%= course.status %>
-                    </td>
+                    <td><%= course.title %></td>
+                    <td><%= course.description.truncate 30 %></td>
+                    <td><%= datetime course.start_date %></td>
+                    <td><%= datetime course.end_date %></td>
+                    <td><%= course.supervisor_courses.count %></td>
+                    <td>]<%= course.user_courses.count %></td>
+                    <td><%= course.status %></td>
                     <td>
                       <div class="admin-actions">
-                        <%= link_to t(".view") ,course_path(course), class: "btn btn-success" %>
-                        <%= link_to t(".join") ,"#", class: "btn btn-primary" %>
+                        <td>
+                          <%= link_to t(".view") ,course_path(course), class: "btn btn-success" %>
+                        </td>
+                        <td>
+                          <% if current_user.user_courses.map{|user_course|
+                            user_course.course_id}.include? course.id %>
+                            <b><%= t ".joined" %></b>
+                          <% else %>
+                            <%= form_for UserCourse.new, url: user_courses_path, method: :post do |f| %>
+                              <%= f.hidden_field :user_id, value: current_user.id %>
+                              <%= f.hidden_field :course_id, value: course.id %>
+                              <%= f.submit t(".join"), class: "btn btn-primary" %>
+                            <% end %>
+                          <% end %>
+                        </td>
                       </div>
                     </td>
                   </tr>
