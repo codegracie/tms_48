@@ -22,6 +22,7 @@ class Ability
       can :read, Task
       can :read, User
       can :update, User, id: user.id
+      can :manage, UserSubject
     end
   end
 end

@@ -1,4 +1,3 @@
-
 <div class="nav-tabs-custom">
   <ul class="nav nav-tabs">
     <li class="active">
@@ -12,7 +11,51 @@
   <div class="tab-content">
     <div class="tab-pane" id="currentcourses">
       <div class="post clearfixr">
-      <h1><%= t ".text_currentcourseshere" %></h1>
+        <ul>
+          <li><h2><%= @active_user_course.course.title %></h2></li>
+          <li><b><%= t ".start_date: " %></b><%= datetime @active_user_course.course.start_date %></li>
+          <li><b><%= t ".end_date: " %></b><%= datetime @active_user_course.course.end_date %></li>
+          <li><b><%= t ".status: " %></b><%= @active_user_course.course.status %></li>
+        </ul>
+        <div class="user-show-subjects">
+          <h3><%= t ".subject_list" %></h3>
+          <% @active_user_course.user_subjects.each do |user_subject| %>
+            <ul>
+              <li><h4><%= link_to user_subject.subject.title, user_subject_path(user_subject) %></h4></li>
+              <li><%= user_subject.status %></li>
+            </ul>
+            <table class="table table-striped user-show-tasks">
+              <thead>
+                <tr>
+                  <th><%= t ".task_title" %></th>
+                  <th><%= t ".status" %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% user_subject.subject.tasks.each do |task| %>
+                  <tr>
+                    <td class="user-show-task-title"><%= task.title %></td>
+                    <% if @user_tasks.map{|user_task| user_task.task_id}.include? task.id %>
+                      <td>
+                        <%= t ".finish" %>
+                      </td>
+                    <% else %>
+                      <td>
+                        <%= form_for UserTask.new, url: user_tasks_path, method: :post do |f|%>
+                          <%= f.hidden_field :user_subject_id, value: user_subject.id %>
+                          <%= f.hidden_field :user_id, value: current_user.id %>
+                          <%= f.hidden_field :task_id, value: task.id %>
+                          <%= f.hidden_field :status, value: "Finish" %>
+                          <%= f.submit t(".mark_finish"), class: "btn btn-sm btn-primary" %>
+                        <% end %>
+                      </td>
+                    <% end %>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="tab-pane active" id="mycourses">
@@ -52,3 +95,4 @@
     </div>
   </div>
 </div>
+Status API Training Shop Blog About Pricing
