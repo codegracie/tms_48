@@ -5,5 +5,5 @@ class UserSubject < ActiveRecord::Base
   has_many :user_tasks
 
   accepts_nested_attributes_for :user_tasks, reject_if:
-    lambda {|task| task[:user_subject_id].blank?}, allow_destroy: true
+    lambda{|task| task[:user_id].blank?}, allow_destroy: true
 end

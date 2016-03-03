@@ -1,7 +1,7 @@
 class UserSubjectsController < ApplicationController
   load_and_authorize_resource
 
-  before_action :build_user_task
+  before_action :build_user_task, except: [:update]
 
   def update
     if @user_subject.update_attributes user_subject_params

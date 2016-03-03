@@ -84,11 +84,17 @@ class DeviseCreateUsers < ActiveRecord::Migration
     end
 
     create_table :activities do |t|
-      t.references :user
-      t.references :target, polymorphic: true
-      t.string :content
+      t.belongs_to :trackable, :polymorphic => true
+      t.belongs_to :owner, :polymorphic => true
+      t.string  :key
+      t.text    :parameters
+      t.belongs_to :recipient, :polymorphic => true
 
       t.timestamps null: false
     end
+
+    add_index :activities, [:trackable_id, :trackable_type]
+    add_index :activities, [:owner_id, :owner_type]
+    add_index :activities, [:recipient_id, :recipient_type]
   end
 end

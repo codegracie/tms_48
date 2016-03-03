@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
 
-  before_action :get_user_courses_and_tasks
+  before_action :get_user_courses_and_tasks, only: [:show]
 
   private
 

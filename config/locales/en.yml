@@ -146,6 +146,12 @@ en:
       finish: Finished
       not_finish: Not Finished
       update: Update
+      information: Basic Information
+      start_date: Start Date
+      end_date: End Date
+      status: Status
+      instruction: Instruction
+      activity: Activities
     update:
       success: You successfully updated Tasks
       failed: Please try again
