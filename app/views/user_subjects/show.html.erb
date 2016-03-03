@@ -21,8 +21,11 @@
                 <tr>
                   <td><%= builder.object.task.title %></td>
                   <td>
-                    <%= builder.check_box :_destroy,
-                      {checked: !builder.object.user_id.nil?}, 0, 1 %>
+                    <% if !builder.object.user_id.nil? %>
+                      <%= t ".finish" %>
+                    <% else %>
+                      <%= builder.check_box :_destroy, {}, 0, 1 %>
+                    <% end %>
                   </td>
                 </tr>
                 <%= builder.hidden_field :task_id, value: builder.object.task.id %>
@@ -40,13 +43,13 @@
       <h3><%= t ".information" %></h3>
       <ul>
         <li>
-          <b><%= t ".start_date" %></b><%= datetime @user_subject.user_course.course.start_date %>
+          <b><%= t ".start_date: " %></b><%= datetime @user_subject.user_course.course.start_date %>
         </li>
         <li>
-          <b><%= t ".end_date" %></b><%= datetime @user_subject.user_course.course.end_date %>
+          <b><%= t ".end_date: " %></b><%= datetime @user_subject.user_course.course.end_date %>
         </li>
         <li>
-          <b><%= t ".status" %></b><%= @user_subject.user_course.course.status %>
+          <b><%= t ".status: " %></b><%= @user_subject.user_course.course.status %>
         </li>
       </ul>
     </div>
@@ -58,6 +61,11 @@
     </div>
     <div class="row">
       <h3><%= t ".activity" %></h3>
+      <% @activities.each do |activity| %>
+        <div class="activity">
+          <%= render_activity activity %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :user_courses
   resources :user_tasks
   resources :user_subjects
+  resources :activities
 
   namespace :admin do
     root "users#index"

@@ -2,6 +2,7 @@ class UserTasksController < ApplicationController
   def create
     @user_task = UserTask.new user_task_params
     if @user_task.save
+      @user_task.create_activity :create, owner: current_user
       flash[:success] = t ".success"
       redirect_to current_user
     else

@@ -1,4 +1,6 @@
 class UserCourse < ActiveRecord::Base
+  include PublicActivity::Common
+
   has_many :user_subjects
   belongs_to :course
   belongs_to :user

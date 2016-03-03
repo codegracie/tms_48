@@ -1,0 +1,8 @@
+<% if activity.trackable %>
+  <%= t ".completed" %>
+  <b><%= UserTask.find(activity.trackable_id).task.title %></b>
+  <i class="time-ago">
+    <%= time_ago_in_words(activity.created_at) %>
+    <%= t ".ago" %>
+  </i>
+<% end %>
