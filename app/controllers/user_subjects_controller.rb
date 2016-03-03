@@ -1,7 +1,7 @@
 class UserSubjectsController < ApplicationController
   load_and_authorize_resource
 
-  before_action :build_user_task, except: [:update]
+  before_action :build_user_task_and_get_activities, except: [:update]
 
   def update
     if @user_subject.update_attributes user_subject_params
@@ -20,10 +20,12 @@ class UserSubjectsController < ApplicationController
       [:id, :user_subject_id, :user_id, :task_id, :status, :_destroy]
   end
 
-  def build_user_task
+  def build_user_task_and_get_activities
     @user_subject.subject.tasks.each do |task|
       @user_subject.user_tasks.new task: task unless
         @user_subject.user_tasks.map{|user_task| user_task.task_id}.include? task.id
+    @activities = PublicActivity::Activity.order("created_at desc").
+      where owner_id: current_user.id, trackable_type: "UserTask"
     end
   end
 end

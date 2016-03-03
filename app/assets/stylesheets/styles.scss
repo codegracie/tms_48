@@ -237,7 +237,7 @@ hr {
     width: 1em;
 }
 
-glyphicon {
+.glyphicon {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -246,4 +246,20 @@ glyphicon {
   font-style: normal;
   font-weight: normal;
   line-height: 1;
+}
+
+.activity {
+  border-bottom: solid 1px #CCC;
+  padding: 16px 0;
+  width: 50%;
+  margin-left: 50px;
+  em {
+    color: #777;
+    font-size: 12px;
+    padding-left: 5px;
+  }
+}
+
+.time-ago {
+  color: cornflowerblue;
 }

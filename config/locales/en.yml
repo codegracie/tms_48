@@ -78,6 +78,11 @@ en:
       subjects: Subjects
       users: Users
       homepage: View Main
+  public_activity:
+    user_task:
+      create:
+        completed: Completed
+        ago: ago
   shared:
     user_activities:
       title: Activities
