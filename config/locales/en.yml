@@ -266,6 +266,9 @@ en:
         add: Add
       show_tasks:
         list: List of Tasks
+    supervisor_courses:
+      show:
+        title: Course List
     users:
       index:
         header_title: Users
