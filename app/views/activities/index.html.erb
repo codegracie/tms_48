@@ -1,0 +1,5 @@
+<% @activities.each do |activity| %>
+    <%= activity.owner.name if activity.owner %>
+      <%= render_activity activity %>
+  <% end %>
+<% end %>
