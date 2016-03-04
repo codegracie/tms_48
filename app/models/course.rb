@@ -1,9 +1,10 @@
 class Course < ActiveRecord::Base
   has_many :supervisor_courses
-  has_many :users, through: :supervisor_courses
+  has_many :users, through: :supervisor_courses 
   has_many :course_subjects, dependent: :destroy
   has_many :subjects, through: :course_subjects
-  has_many :user_courses
+  has_many :user_courses 
+  has_many :trainees, through: :user_courses, class_name: User.name
 
   validates :title, presence: true
   validates :description, presence: true
@@ -19,6 +20,4 @@ class Course < ActiveRecord::Base
 
   accepts_nested_attributes_for :user_courses, reject_if:
     lambda {|attr| attr[:user_id].blank?}, allow_destroy: true
-
-  scope :active, -> {where "status = ?", "Started"}
 end

@@ -6,10 +6,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @course.user_courses.each do |trainee| %>
+    <% @course.trainees.each do |trainee| %>
       <tr>
-        <td><%= trainee.user.full_name %></td>
-        <td><%= trainee.user.email %></td>
+        <td><%= trainee.full_name %></td>
+        <td><%= trainee.email %></td>
       </tr>
     <% end %>
   </tbody>

@@ -3,7 +3,7 @@ class UserCourse < ActiveRecord::Base
 
   has_many :user_subjects
   belongs_to :course
-  belongs_to :user
+  belongs_to :trainee, class_name: User.name, foreign_key: :user_id
 
   def create_user_subjects
     subjects = self.course.subjects
